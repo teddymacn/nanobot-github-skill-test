@@ -1,9 +1,9 @@
 """API client for external service integration."""
 
+import os
 import requests
 
-# Hardcoded API key - SECURITY ISSUE
-API_KEY = "sk_live_abc123xyz789secret"
+API_KEY = os.environ.get("API_KEY")
 
 def fetch_data(endpoint: str) -> dict:
     """Fetch data from the API."""
